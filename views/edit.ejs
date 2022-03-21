@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="//js.nicedit.com/nicEdit-latest.js"></script> 
+      <script type="text/javascript">
+     
+            bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+      </script>
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+        <title>New blog post</title>
+    </head>
+
+<body>
+    <div class="sticky-top">
+
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="container-fluid" >
+                <a class="navbar-brand" href="/">WEB ARTICLES</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/articles/new">Post your Article</a>
+                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="#">Login</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            </div>
+            
+
+    <div class="container">
+        <h1 class="mb-4 text-white">editing <%= blog.title %> </h1>
+
+        <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
+            <div class="form-group">
+
+                <label for="title" class="text-white">Title</label>
+                <input type="text" class="form-control" placeholder="Title" name="title" value="<%= blog.title %>"
+                    required>
+            </div>
+
+            <div class="form-group">
+
+                <label for="author" class="text-white">Author</label>
+                <input type="text" class="form-control" placeholder="Author" name="author" value="<%= blog.author %>"
+                    required>
+            </div>
+            <div class="form-group">
+
+                <label for="description" class="text-white">Description</label>
+                <textarea name="description" placeholder="Description" class="form-control">
+
+                    <%= blog.description %>
+                </textarea>
+            </div>
+            <div class="form-group">
+
+                <label for="Email" class="text-white">Email</label>
+                <input type="text" class="form-control" placeholder="email" name="email" value="<%= blog.email %>"  required>
+            </div>
+            <div class="form-group">
+                <label for="title" >Category</label>
+              
+            <select required name="status" id="status" >
+              <option value="publish" >publish</option> 
+              <option value="unpublish">unpublish</option>
+              <%= blog.status %>
+            </select>
+              </div>
+
+            <div class="form-group">
+                <a href="/" class="btn btn-warning">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

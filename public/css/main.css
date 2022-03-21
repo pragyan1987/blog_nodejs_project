@@ -1,0 +1,12 @@
+body {
+  
+  background: url('/images/back5.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card-img {
+  background: url('/images/mosque.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}

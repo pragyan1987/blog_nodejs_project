@@ -1,0 +1,13 @@
+body {
+  background-color: aliceblue;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card-img {
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+  }
+  

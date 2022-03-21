@@ -1,0 +1,76 @@
+<%- include('header') %>
+    <div class="container">
+       
+        <div class="row mb-3">
+            <a href="blogs/new" class="btn btn-success d-flex align-items-center"><i
+                    class="material-icons mr-2">add_circle</i>
+                New Blog</a> &nbsp; &nbsp;  &nbsp;&nbsp;
+                    <div class="dropdown">
+                        <button class="btn btn-success d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                         Select Category
+                        </button>
+                        <ul class="dropdown-menu btn btn-success" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Action">Action</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Comedy">Comedy</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Story">Story</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Moral">Moral</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Educational">Educational</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Adventure">Adventure</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Epic">Epic</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Bedtime stories">Bedtime stories</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Friction">Friction</a></li>
+                          <li><a class="btn btn-success d-flex align-items-center" href="category/Non-Friction">Non-Friction</a></li>
+                        </ul>
+                      </div>
+               
+        </div>
+
+        <div class="row">
+
+            <% if(blogs.length<1){%>
+
+            <p class="text-white">No posts yet, create a new one</p>
+
+            <%  } %>
+
+
+            <% blogs.forEach(blog=>{ %>
+
+
+            <div class="col-lg-5 card mt-2 mr-0">
+                <div class="row p-2">
+
+                    <div class="mr-2">
+                        <a href="blogs/<%=blog.slug %>"><img src="/uploads/images/<%= blog.img %>" class="rounded-circle"
+                        style="width: 60px; height: 60px;"></a>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="d-flex align-items-start" >
+                           <a href="blogs/<%=blog.slug %>" ><h5  style="font:lighter;color:crimson ;"><b> <%= blog.title %> </b></h5></a>
+
+                            <!-- display more button -->
+                            </div>
+                            <div>
+                            <a href="blogs/<%=blog.slug %> " class=" align-self-end">
+                                <i class='material-icons ml-3 text-black'>send</i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <% }) %>
+
+
+
+
+        </div>
+        <script src="/js/index.js"></script>
+
+</body>
+
+</html>
