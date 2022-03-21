@@ -14,8 +14,7 @@ const blogRouter2 = require('./routes/regi');
 
 const Blog = require('./models/Blog');
 const User= require('./models/data');
-const port=process.env.port ||5000;
-
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 //const db='mongodb+srv://mydb1:mydb1980@cluster0.c29zo.mongodb.net/new_blog?retryWrites=true&w=majority';
@@ -141,7 +140,6 @@ app.use('/regi', blogRouter2);
 
 //listen port
 //app.listen(5000);
-app.listen(port,() => {
-
-  console.log(port );
-})
+app.listen(PORT, () => {
+  console.log(`Our app is running on port ${ PORT }`);
+});
