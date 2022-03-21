@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 
 //bring in mongoose
@@ -18,8 +19,14 @@ const app = express();
 
 //const db='mongodb+srv://mydb1:mydb1980@cluster0.c29zo.mongodb.net/new_blog?retryWrites=true&w=majority';
 
+mongoose.connect(process.env.DATABASE,
+  {useNewUrlParser: true, useUnifiedTopology: true,}
+  )
+  .then(() => { 
+console.log("DB connected");
 
-mongoose.connect('mongodb+srv://mydb1:mydb1980@cluster0.3x8rg.mongodb.net/new_blog');
+  });
+//mongoose.connect('mongodb+srv://mydb1:mydb1980@cluster0.3x8rg.mongodb.net/new_blog');
 
 
 //mongoose.connect('mongodb://localhost/new_blog', {
