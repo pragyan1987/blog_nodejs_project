@@ -14,6 +14,7 @@ const blogRouter2 = require('./routes/regi');
 
 const Blog = require('./models/Blog');
 const User= require('./models/data');
+const port=process.env.port ||5000;
 
 const app = express();
 
@@ -139,4 +140,8 @@ app.use('/regi', blogRouter2);
 
 
 //listen port
-app.listen(5000);
+//app.listen(5000);
+app.listen(port,() => {
+
+  console.log(port );
+})
