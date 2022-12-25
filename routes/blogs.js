@@ -79,7 +79,7 @@ router.post('/register', async (req, res) => {
 router.post('/admin_login', async (req, res) =>  {
     
   const{email,password}=req.body;
-  if(email === 'p1@gmail.com' && password === '1234')
+  if(email == 'p1@gmail.com' && password =='1234')
   {
     
       

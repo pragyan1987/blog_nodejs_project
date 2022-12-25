@@ -23,17 +23,17 @@ const app = express();
 mongoose.connect(process.env.DATABASE,
   {useNewUrlParser: true, useUnifiedTopology: true,}
   )
-  .then(() => { 
+ .then(() => { 
 console.log("DB connected");
 
   });
 //mongoose.connect('mongodb+srv://mydb1:mydb1980@cluster0.3x8rg.mongodb.net/new_blog');
 
 
-//mongoose.connect('mongodb://localhost/new_blog', {
- // useNewUrlParser: true, useUnifiedTopology: true
-//});
-
+/* mongoose.connect('mongodb://localhost/new_blog', {
+  useNewUrlParser: true, useUnifiedTopology: true
+});
+ */
 
 //set template engine
 app.set('view engine', 'ejs');
